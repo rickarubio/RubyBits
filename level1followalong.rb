@@ -111,13 +111,84 @@ options[:privacy] ||= true
 options[:geotag] ||= true
 
 # Conditional Return Values
+if list_name
+  options[:path] = "/#{user_name}/#{list_name}"
+else
+  options[:path] = "/#{user_name}"
+end
 
+# In Ruby, conditionals always return a value.
+# The above should be rewritten as:
+options[:path] = if list_name
+  "/#{user_name}/#{list_name}"
+else
+  "/#{user_name}"
+end
 
+# Every method in Ruby returns a value
 
+# This code needs to be refactored:
+def list_url(user_name, list_name)
+  if list_name
+    url = "https://twitter.com/#{user_name}/#{list_name}"
+  else
+    url = "https://twitter.com/#{user_name}"
+  end
+  url
+end
 
+# Here is the above refactored:
+def list_url(user_name, list_name)
+  if list_name
+    "https://twitter.com/#{user_name}/#{list_name}"
+  else
+    "https://twitter.com/#{user_name}"
+  end
+end
 
+# Case Statement Value
+client_url = case client_name
+when "web"
+  "http://twitter.com"
+when "Facebook"
+  "http://www.facebook.com/twitter"
+else
+  nil
+end
 
+# Case statement with Ranges
+popularity = case tweet.retweet_count
+  when 0..9
+    nil
+  when 10..99
+    "trending"
+  else
+    "hot"
+  end
 
+# Case statement with Regular Expressions (REGEXPS)
+tweet_type = case tweet.status
+  when /\A@\w+/
+    :mention
+  when /\Ad\s+\w+/
+    :direct_message
+  else
+    :public
+  end
+
+# You can also rewrite the above using when then statements
+tweet_type = case tweet.status
+  when /\A@\w+/     then :mention
+  when /\Ad\s+\w+/  then :direct_message
+  else                   :public
+end
+
+# Using if with negative conditions can be hard to read. (so use unless)
+# Doing a full unless statement is sometimes too much. Use single line unless instead.
+# Comparing something with nil in an if statement isn't needed in Ruby
+# Remember the short circuit and operator and its use
+
+# left off on conditional Assignment Level 1
 
 
 

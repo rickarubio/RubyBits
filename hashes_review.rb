@@ -53,3 +53,5 @@ people3.each do |key, value|
   print value
   puts
 end
+
+# Also keep in mind that in IRB, hashrocket => tells you what the statement you just ran returned, not the value
