@@ -46,3 +46,10 @@ p people2
 # Instead of using Hashrocket => you can use : but the Hashrocket is the Ruby preferred way
 people3 = {store: 'Ikea', color: 'maroon', price: 'inexpensive'} # note that this will not work with a numeric key
 p people3
+
+# Just like Arrays, I should be able to use Enumerable methods
+people3.each do |key, value|
+  print key.to_s + " => "
+  print value
+  puts
+end
