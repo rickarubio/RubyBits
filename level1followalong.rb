@@ -1,4 +1,4 @@
-# Sure you could say somethign like this to say
+# Sure you could say something like this to say
 # if the tweets are not empty, display them
 if ! tweets.empty?
   puts "Timeline:"
