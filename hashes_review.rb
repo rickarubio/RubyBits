@@ -55,3 +55,6 @@ people3.each do |key, value|
 end
 
 # Also keep in mind that in IRB, hashrocket => tells you what the statement you just ran returned, not the value
+empty_hash = {}
+p empty_hash
+puts empty_hash.class

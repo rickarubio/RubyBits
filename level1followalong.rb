@@ -1,3 +1,5 @@
+# Level 1: Expressions
+
 # Sure you could say something like this to say
 # if the tweets are not empty, display them
 if ! tweets.empty?
@@ -187,11 +189,3 @@ end
 # Doing a full unless statement is sometimes too much. Use single line unless instead.
 # Comparing something with nil in an if statement isn't needed in Ruby
 # Remember the short circuit and operator and its use
-
-# left off on conditional Assignment Level 1
-
-
-
-
-
-
